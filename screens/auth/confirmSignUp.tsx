@@ -9,6 +9,7 @@ import {ObjectSchema} from 'yup';
 import {RouteProp} from '@react-navigation/native';
 import {AuthRoutes, AuthStackScreenProps} from '../../routes/types';
 import {confirmSignUp, resendSignUpCode} from 'aws-amplify/auth';
+import AuthWrapper from './components/AuthWrapper';
 
 type ConfirmPayload = {
   code: string;
@@ -58,13 +59,7 @@ const ConfirmSignUp = ({route, navigation}: AuthStackScreenProps) => {
     resolver: yupResolver(confirmSignupSchema as ObjectSchema<ConfirmPayload>),
   });
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: 'white',
-        paddingTop: 60,
-        paddingHorizontal: 30,
-      }}>
+    <AuthWrapper>
       <Text
         style={{
           alignSelf: 'center',
@@ -89,7 +84,7 @@ const ConfirmSignUp = ({route, navigation}: AuthStackScreenProps) => {
         onPress={handleResendVerificationCode}>
         <Text style={{color: 'gray'}}>Resend verification code</Text>
       </TouchableOpacity>
-    </View>
+    </AuthWrapper>
   );
 };
 
