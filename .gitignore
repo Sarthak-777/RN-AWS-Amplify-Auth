@@ -68,8 +68,13 @@ yarn-error.log
 #lib file
 lib/
 
+amplify/.config
+amplify/backend
+amplify/cli.json
+amplify/team-provider-info.json
+
 #amplify-do-not-edit-begin
-amplify/
+
 amplify/\#current-cloud-backend
 amplify/.config/local-*
 amplify/logs
