@@ -44,6 +44,7 @@ const SignUp = ({navigation}: any) => {
           userAttributes: {
             phone_number: phoneNumber,
           },
+          autoSignIn: true,
         },
       });
       if (nextStep.signUpStep === 'CONFIRM_SIGN_UP') {

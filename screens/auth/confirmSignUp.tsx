@@ -7,7 +7,7 @@ import {yupResolver} from '@hookform/resolvers/yup';
 import confirmSignupSchema from '../../schema/confirmSignupSchema';
 import {ObjectSchema} from 'yup';
 import {RouteProp} from '@react-navigation/native';
-import {AuthStackScreenProps} from '../../routes/types';
+import {AuthRoutes, AuthStackScreenProps} from '../../routes/types';
 import {confirmSignUp, resendSignUpCode} from 'aws-amplify/auth';
 
 type ConfirmPayload = {
@@ -24,7 +24,9 @@ const ConfirmSignUp = ({route, navigation}: AuthStackScreenProps) => {
         username,
         confirmationCode: code,
       });
-      console.log(nextStep);
+      if (isSignUpComplete) {
+        navigation.navigate(AuthRoutes.Login);
+      }
     } catch (error: any) {
       Alert.alert('Error', error.message);
     }

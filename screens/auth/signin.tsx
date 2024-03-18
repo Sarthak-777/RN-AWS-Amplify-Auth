@@ -80,14 +80,24 @@ const SignIn = ({navigation}: any) => {
         secureTextEntry={true}
       />
       <Button title="login" onPress={handleSubmit(submitHandler)} />
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate(AuthRoutes.Register);
-        }}>
-        <Text style={{fontWeight: '500', marginTop: 30, color: 'gray'}}>
-          Register Here
-        </Text>
-      </TouchableOpacity>
+      <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate(AuthRoutes.Register);
+          }}>
+          <Text style={{fontWeight: '500', marginTop: 30, color: 'gray'}}>
+            Register Here
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate(AuthRoutes.ForgotPassword);
+          }}>
+          <Text style={{fontWeight: '500', marginTop: 30, color: 'gray'}}>
+            forgot password?
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
