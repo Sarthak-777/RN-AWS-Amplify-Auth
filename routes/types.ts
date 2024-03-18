@@ -5,6 +5,7 @@ export enum AuthRoutes {
   Register = 'Register',
   ConfirmSignUp = 'ConfirmSignUp',
   ForgotPassword = 'ForgotPassword',
+  ConfirmResetPassword = 'ConfirmResetPassword',
 }
 
 export enum AppRoutes {
@@ -16,6 +17,7 @@ export type AuthStackParamList = {
   [AuthRoutes.Register]: undefined;
   [AuthRoutes.ConfirmSignUp]: {username: string};
   [AuthRoutes.ForgotPassword]: undefined;
+  [AuthRoutes.ConfirmResetPassword]: undefined;
 };
 
 export type AppStackParamList = {
